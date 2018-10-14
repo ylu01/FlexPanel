@@ -20,13 +20,11 @@
     *, *:before, *:after {
       box-sizing: inherit;
     }
-
     .panels {
       min-height:100vh;
       overflow: hidden;
       display: flex;
     }
-
     .panel {
       background:#6B0F9C;
       box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
@@ -47,14 +45,11 @@
       display: flex;
       flex-direction: column;
     }
-
-
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
-    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
-
+    .panel2 { background-image:url(https://postmediatorontosun.files.wordpress.com/2018/01/pearson-e1515201993665.jpg); }
+    .panel3 { background-image:url(https://skytraxratings.com/wp-content/uploads/2017/12/PEK_1-984x554.jpg); }
+    .panel4 { background-image:url(http://japan-chiba-guide.com/narita-area/img/top/02.jpg); }
+    .panel5 { background-image:url(https://bondlinkcdn.com/1348/332648_325638934118100_138929028_o-cropped.UbHU6MXpex.jpg); }
     /* Flex Items */
     .panel > * {
       margin:0;
@@ -65,12 +60,10 @@
       justify-content: center;
       align-items: center;
     }
-
     .panel > *:first-child { transform: translateY(-100%); }
     .panel.open-active > *:first-child { transform: translateY(0); }
     .panel > *:last-child { transform: translateY(100%); }
     .panel.open-active > *:last-child { transform: translateY(0); }
-
     .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
@@ -80,12 +73,10 @@
     .panel p:nth-child(2) {
       font-size: 4em;
     }
-
     .panel.open {
       flex: 5;
       font-size:40px;
     }
-
   </style>
 
 
@@ -96,42 +87,39 @@
       <p>Dance</p>
     </div>
     <div class="panel panel2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
+      <p>YYZ</p>
+      <p>Toronto</p>
+      <p>Pearson International</p>
     </div>
     <div class="panel panel3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
+      <p>PEK</p>
+      <p>Beijing</p>
+      <p>Capital International</p>
     </div>
     <div class="panel panel4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You can</p>
+      <p>NRT</p>
+      <p>Tokyo</p>
+      <p>Narita International</p>
     </div>
     <div class="panel panel5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
+      <p>ORD</p>
+      <p>Chicago</p>
+      <p>O'hare International</p>
     </div>
   </div>
 
   <script>
     const panels = document.querySelectorAll('.panel');
-
     function toggleOpen() {
       console.log('Hello');
       this.classList.toggle('open');
     }
-
     function toggleActive(e) {
       console.log(e.propertyName);
       if (e.propertyName.includes('flex')) {
         this.classList.toggle('open-active');
       }
     }
-
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
